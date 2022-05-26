@@ -1,0 +1,39 @@
+export CLICOLOR=1
+export LC_ALL=en_US.UTF-8
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '%F{red}🅤%f '
+zstyle ':vcs_info:*' stagedstr '%F{green}🅢%f '
+zstyle ':vcs_info:*' formats '%F{yellow}( <%f%F{green}%r%f%F{yellow}>%f %b %u%c%F{yellow})%f'
+
+function virtualenv_info () {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
+PROMPT=$'\n'
+PROMPT+='%{%F{yellow}%}< %{%F{blue}%}%~%{%F{white}%} :'
+PROMPT+='   ${vcs_info_msg_0_}'
+PROMPT+=$'\n'
+PROMPT+='%{%F{green}%}$(virtualenv_info)'
+PROMPT+='%{%F{cyan}%}%n%{%F{135}%}@%{%F{cyan}%}%m%{%F{yellow}%} > %{%F{white}%}'
+
+
+
+# Aliases from native linux-mint .bashrc
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias ll='ls -alF'
+    alias la='ls -A'
+    alias l='ls -CF'
+    alias mg='mongo --quiet'
+
+# Bindings for "word movement" with <Ctrl + [Left, Right]>
+    bindkey '^[[1;5C' emacs-forward-word
+    bindkey '^[[1;5D' emacs-backward-word
