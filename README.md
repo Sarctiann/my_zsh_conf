@@ -15,6 +15,12 @@ En mi caso, es todo lo que necesito por el momento para utilizar con comodidad
 el Terminal. Pero para otros podría servirles de pequeña muestra de lo que se
 puedo lograr con ***zsh***
 
+El resultado se ve así:
+
+![](./sample.png)
+
+y cuenta con resaltado de texto, sugerencias e información de git
+
 ---
 
 # Instrucciones
