@@ -35,14 +35,11 @@ y cuenta con resaltado de texto, sugerencias e información de git
 
     `sudo apt install zsh`
 
-1. Configurar zsh como shell por defecto:
+1. Configurar zsh como shell por defecto en el profile del emulador de terminal:
 
-    `chsh -s $(which zsh)`
-    > Si lo anterior no funciona, necesitas configurarlo manualmente en el
-    > "Perfil" de tu terminal. Vas a encontrar un campo de texto con algo 
-    > similar a "Orden", "Comando", o algo parecido en donde vas a tener que 
-    > poner **/usr/bin/zsh** o **/bin/zsh** (según donde se haya instalado zsh)
-    > podés ver donde se instaló justamente con: `which zsh`
+    `which zsh` nos devuelve el path de **zsh** que necesitamos para reemplazar **/bin/bash** o **/usr/bin/bash**
+    
+    > no usar: `chsh -s $(which zsh)` porque necesitamos que el sistema siga usando su shell por defecto
 
 1. Copiar el archivo **.zshrc** de esta carpeta y reemplazamos el que nos creo 
     zsh en nuestro *home*:
