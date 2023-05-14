@@ -55,7 +55,7 @@ y cuenta con resaltado de texto, sugerencias e información de git
 
        (Mac) `cp ./mac/.zshrc ~/`
 
-1.  Copiar el la carpeta **.zsh** en nuesto _home_:
+1.  Copiar la carpeta **.zsh** en nuesto _home_:
 
     `cp -r ./.zsh ~/`
 
