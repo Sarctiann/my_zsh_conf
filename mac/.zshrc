@@ -73,10 +73,11 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PATH=/Users/sebastianrodriguezcapurro/Library/Python/3.9/bin:$PATH
+export PATH=/Users/$USER/./Library/Python/3.9/lib/python/site-packages:$PATH
+export PATH=/Users/$USER/Library/Python/3.9/bin:$PATH
+export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
-export PATH=/Users/sebastianrodriguezcapurro/./Library/Python/3.9/lib/python/site-packages:$PATH
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
