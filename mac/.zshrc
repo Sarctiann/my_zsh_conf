@@ -36,6 +36,7 @@ PROMPT+='%{%F{cyan}%}%n%{%F{135}%}@%{%F{cyan}%}%m%{%F{yellow}%} > %{%F{white}%}'
     alias la='ls -A'
     alias l='ls -CF'
     alias mg='mongo --quiet'
+    alias nv='nvim'
 
 # Bindings for "word movement" with <Ctrl + [Left, Right]>
     bindkey '^[[1;5C' emacs-forward-word
