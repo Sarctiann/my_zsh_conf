@@ -1,5 +1,8 @@
 # Una configuración sencilla de _ZSH_
 
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](README.md)
+[![es](https://img.shields.io/badge/lang-es-red.svg)](README.ES.md)
+
 > para lograr este perfil utilizo 2 plugins de `zsh-users`:
 >
 > - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
