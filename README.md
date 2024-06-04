@@ -1,5 +1,8 @@
 # A simple setup for _ZSH_
 
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](README.md)
+[![es](https://img.shields.io/badge/lang-es-red.svg)](README.ES.md)
+
 > this configuration requires 2 modules from `zsh-users`:
 >
 > - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
