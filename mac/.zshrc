@@ -10,8 +10,8 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '%F{red}🅤%f '
-zstyle ':vcs_info:*' stagedstr '%F{green}🅢%f '
+zstyle ':vcs_info:*' unstagedstr '%F{red} %f'
+zstyle ':vcs_info:*' stagedstr '%F{green} %f'
 zstyle ':vcs_info:*' formats '%F{yellow}( <%f%F{green}%r%f%F{yellow}>%f %b %u%c%F{yellow})%f'
 
 function virtualenv_info () {
@@ -36,6 +36,7 @@ PROMPT+='%{%F{cyan}%}%n%{%F{135}%}@%{%F{cyan}%}%m%{%F{yellow}%} > %{%F{white}%}'
     alias la='ls -A'
     alias l='ls -CF'
     alias mg='mongo --quiet'
+    alias nv='nvim'
 
 # Bindings for "word movement" with <Ctrl + [Left, Right]>
     bindkey '^[[1;5C' emacs-forward-word
@@ -73,12 +74,44 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PATH=/Users/$USER/./Library/Python/3.9/lib/python/site-packages:$PATH
-export PATH=/Users/$USER/Library/Python/3.9/bin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f ".nvmrc" ]; then
+  nvm use > /dev/null
+else
+  nvm use default > /dev/null
+fi
+
+# bun completions
+  [ -s "$HOME/.reflex/.bun/_bun" ] && source "$HOME/.reflex/.bun/_bun"
+
+# bun
+  export BUN_INSTALL="$HOME/.reflex/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Deno
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+
+# JAVA zulu for React Native
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
+# Android SDK
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/emulator
+
+# Mojo
+  export MODULAR_HOME="$HOME/.modular"
+  export PATH="$HOME/.modular/pkg/packages.modular.com_nightly_mojo/bin:$PATH"
