@@ -27,49 +27,44 @@ estilo diferente para los entornos virtuales de python.
 
 ---
 
-1. Para simplificar las cosas, primero Abrir un Terminal situado en esta carpeta
+1.  Para simplificar las cosas, primero Abrir un Terminal situado en esta carpeta
 
-1. Instalar zsh si aún no lo tenés en el sistema:
+1.  Instalar zsh si aún no lo tenés en el sistema:
 
-   `sudo apt install zsh`
+    `sudo apt install zsh`
 
-1. Configurar zsh como shell por defecto en el profile del emulador de terminal:
+1.  Configurar zsh como shell por defecto en el profile del emulador de terminal:
 
-   `which zsh` nos devuelve el path de **zsh** que necesitamos para reemplazar
-   **/bin/bash** o **/usr/bin/bash**
+    `which zsh` nos devuelve el path de **zsh** que necesitamos para reemplazar
+    **/bin/bash** o **/usr/bin/bash**
 
-   > no usar: `chsh -s $(which zsh)` porque necesitamos que el sistema siga usando
-   > su shell por defecto
+    > no usar: `chsh -s $(which zsh)` porque necesitamos que el sistema siga usando
+    > su shell por defecto
 
-1. Copiar el archivo **.zshrc** de esta carpeta y reemplazamos el que nos creo
-   zsh en nuestro _home_:
+1.  Copiar el archivo **.zshrc** de esta carpeta y reemplazamos el que nos creo
+    zsh en nuestro _home_:
+    1. Hacer un backup de .zshrc por si algo va mal:
 
-   1. Hacer un backup de .zshrc por si algo va mal:
+       `cp  ~/.zshrc ~/.zshrc_old`
 
-      `cp  ~/.zshrc ~/.zshrc_old`
+1.  `cp .zshrc ~/`
 
-   1. Ahora si:
+1.  Copiar la carpeta **.zsh** en nuesto _home_:
 
-      (Linux) `cp ./linux/.zshrc ~/`
+    `cp -r ./.zsh ~/`
 
-      (Mac) `cp ./mac/.zshrc ~/`
+1.  (Solo en Linux) Copiar el archivo **prompt_sarc_setup** en: /usr/share/zsh/functions/Prompts/
 
-1. Copiar la carpeta **.zsh** en nuesto _home_:
+    `sudo cp ./prompt_sarc_setup /usr/share/zsh/functions/Prompts/`
 
-   `cp -r ./.zsh ~/`
+    _(y ponemos nuestra contraseña)_
 
-1. (Solo en Linux) Copiar el archivo **prompt_sarc_setup** en: /usr/share/zsh/functions/Prompts/
+1.  Solo queda cerrar y volver a abrir el terminal
 
-   `sudo cp ./prompt_sarc_setup /usr/share/zsh/functions/Prompts/`
-
-   _(y ponemos nuestra contraseña)_
-
-1. Solo queda cerrar y volver a abrir el terminal
-
-   `exit` y posiblemente **[CTRL]** + **[SHIFT]** + **[T]** para abrir ;)
+    `exit` y posiblemente **[CTRL]** + **[SHIFT]** + **[T]** para abrir ;)
 
 ### Listo
 
-Podría haber condensado esto en un sript jaja. Pero que gracia tendría.
+Podría haber condensado esto en un script jaja. Pero que gracia tendría.
 
 ---

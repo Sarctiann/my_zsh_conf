@@ -42,26 +42,15 @@ different style for python virtual environments.
 
 1. Copy the **.zshrc** file from this folder and replace the one that was created
    for us zsh in our _home_:
-
    1. Make a backup of .zshrc in case something goes wrong:
 
    `cp ~/.zshrc ~/.zshrc_old`
 
-   1. Now:
-
-   (Linux) `cp ./linux/.zshrc ~/`
-
-   (Mac) `cp ./mac/.zshrc ~/`
+1. `cp .zshrc ~/`
 
 1. Copy the **.zsh** folder to our _home_:
 
    `cp -r ./.zsh ~/`
-
-1. (Linux only) Copy the **prompt_sarc_setup** file to: /usr/share/zsh/functions/Prompts/
-
-   `sudo cp ./prompt_sarc_setup /usr/share/zsh/functions/Prompts/`
-
-   _(and we put our password)_
 
 1. All that remains is to close and reopen the terminal
 

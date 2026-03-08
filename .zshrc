@@ -15,7 +15,7 @@ zstyle ':vcs_info:*' stagedstr '%F{green} %f'
 zstyle ':vcs_info:*' formats '%F{yellow}( <%f%F{green}%r%f%F{yellow}>%f %b %u%c%F{yellow})%f'
 
 function virtualenv_info () {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+  [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
 PROMPT=$'\n'
@@ -28,19 +28,24 @@ PROMPT+='%{%F{cyan}%}%n%{%F{135}%}@%{%F{cyan}%}%m%{%F{yellow}%} > %{%F{white}%}'
 
 
 # Aliases from native linux-mint .bashrc
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias ll='ls -al'
-    alias la='ls -A'
-    alias l='ls -CF'
-    alias mg='mongo --quiet'
-    alias nv='nvim'
+  alias "cd.."= "cd .."
+  alias "cd-"= "cd -"
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+  alias ll='ls -al'
+  alias la='ls -A'
+  alias l='ls -CF'
+  alias mg='mongo --quiet'
+  alias lzv='nvim'
+  alias lzg='lazygit'
+  alias lzd='lazydocker'
+  alias lzs='lazysql'
 
 # Bindings for "word movement" with <Ctrl + [Left, Right]>
-    bindkey '^[[1;5C' emacs-forward-word
-    bindkey '^[[1;5D' emacs-backward-word
+  bindkey '^[[1;5C' emacs-forward-word
+  bindkey '^[[1;5D' emacs-backward-word
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -91,6 +96,9 @@ else
   nvm use default > /dev/null
 fi
 
+# SSH Agent configuration (use systemd ssh-agent socket)
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # bun completions
   [ -s "$HOME/.reflex/.bun/_bun" ] && source "$HOME/.reflex/.bun/_bun"
 
@@ -112,6 +120,11 @@ fi
   export PATH=$PATH:$ANDROID_HOME/tools/bin
   export PATH=$PATH:$ANDROID_HOME/emulator
 
+
 # Mojo
   export MODULAR_HOME="$HOME/.modular"
   export PATH="$HOME/.modular/pkg/packages.modular.com_nightly_mojo/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+eval "$(rbenv init -)"
